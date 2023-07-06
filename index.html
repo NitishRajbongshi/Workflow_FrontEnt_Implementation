@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="flex justify-center items-center min-h-screen bg-gray-100">
+      <form
+        id="login_single_user"
+        class="w-full m-2 md:w-[25rem] p-6 bg-white rounded-lg shadow-md"
+      >
+        <div class="mb-4 text-center">
+          <h1 class="text-2xl text-blue-500 font-bold">Login</h1>
+        </div>
+        <div class="mb-4">
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-600"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="password"
+            class="block mb-2 text-sm font-medium text-gray-600"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
+          />
+        </div>
+        <div class="flex items-center justify-between w-full">
+          <button
+            type="submit"
+            class="px-4 py-2 w-full text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+          >
+            Login
+          </button>
+        </div>
+        <div class="my-4 text-center">
+          <a href="#" class="text-blue-500">Login as a group member?</a>
+        </div>
+      </form>
+    </div>
+    <script src="assets/scripts/single_login.js"></script>
+  </body>
+</html>
