@@ -5,22 +5,23 @@ window.addEventListener("popstate", function () {
 });
 
 // Function to handle single person login form submission
-function handleSingleLogin(event) {
+function handleGroupLogin(event) {
   event.preventDefault(); // Prevent form submission
 
   // Retrieve form data
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const group = document.getElementById("group").value;
 
   // Make API call
   fetch(
-    "http://localhost/workflow_management_system_v1/wp-json/workflow-management/v1/workflow/login",
+    "http://localhost/workflow_management_system_v1/wp-json/workflow-management/v1/workflow/login/group",
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, group }),
     }
   )
     .then((response) => {
@@ -39,6 +40,7 @@ function handleSingleLogin(event) {
         } else {
           sessionStorage.setItem("login", data.login);
           sessionStorage.setItem("group", data.group);
+          sessionStorage.setItem("group_name", data.group_name);
           sessionStorage.setItem("id", data.info.employee_id);
           sessionStorage.setItem("name", data.info.employee_name);
           sessionStorage.setItem("email", email);
@@ -48,7 +50,7 @@ function handleSingleLogin(event) {
           sessionStorage.setItem("token", data.token);
 
           // Redirect to the dashboard
-          window.location.href = "assets/pages/dashboard.html";
+          window.location.href = "dashboard.html";
         }
       }
     })
@@ -59,5 +61,5 @@ function handleSingleLogin(event) {
 
 // Add event listener to the form submit event
 document
-  .getElementById("login_single_user")
-  .addEventListener("submit", handleSingleLogin);
+  .getElementById("login_group_user")
+  .addEventListener("submit", handleGroupLogin);

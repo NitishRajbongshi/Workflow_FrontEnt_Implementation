@@ -1,6 +1,8 @@
+// JS to handle the user dashboards
 // Retrieve the stored email from the session
 const login = sessionStorage.getItem("login");
 const group = sessionStorage.getItem("group");
+const group_name = sessionStorage.getItem("group_name");
 const employee_id = sessionStorage.getItem("id");
 const employee_name = sessionStorage.getItem("name");
 const employee_email = sessionStorage.getItem("email");
@@ -13,6 +15,14 @@ if (login != "true" || token == undefined) {
   // Redirect to the login page
   window.location.href = "../../index.html";
 } else {
+  const is_group = document.getElementById("is_group");
+  if(group == "false") {
+    is_group.classList.add('hidden');
+  }
+  else {
+    group_type = document.getElementById('group_type');
+    group_type.innerText = group_name;
+  }
   const set_name = document.querySelectorAll(".employee_name");
   const set_email = document.querySelector(".email");
   const set_phone = document.querySelector(".phone");

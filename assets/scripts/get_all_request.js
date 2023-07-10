@@ -1,4 +1,4 @@
-console.log("loading");
+// Get all the information of an instance
 const login = sessionStorage.getItem("login");
 const employee_id = sessionStorage.getItem("id");
 const token = sessionStorage.getItem("token");
@@ -28,6 +28,7 @@ if (login != "true" || token == undefined) {
       }
     })
     .then((data) => {
+      console.log(data);
       const requests = data;
       // Get the data container element
       const dataContainer = document.getElementById("dataContainer");
@@ -89,6 +90,7 @@ window.addEventListener("popstate", function () {
   history.pushState(null, null, document.URL);
 });
 
+// details related to the instance
 function view_more(event) {
   const id = event.target.getAttribute("data-id");
   console.log(id);
