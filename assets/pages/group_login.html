@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="dist/output.css" rel="stylesheet" />
+    <link href="../../dist/output.css" rel="stylesheet" />
   </head>
   <body>
     <div class="flex justify-center items-center min-h-screen bg-gray-100">
       <form
-        id="login_single_user"
+        id="login_group_user"
         class="w-full m-2 md:w-[25rem] p-6 bg-white rounded-lg shadow-md"
       >
         <div class="mb-4 text-center">
-          <h1 class="text-2xl text-blue-500 font-bold">Login</h1>
+          <h1 class="text-2xl text-blue-500 font-bold">Group Login</h1>
         </div>
         <div class="mb-4">
           <label
@@ -42,6 +42,16 @@
             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500"
           />
         </div>
+        <div class="mb-6">
+          <label class="mb-2 text-sm font-medium text-gray-600" for="group">Choose a group:</label>
+
+          <select name="group" id="group" class="border-2 border-blue-200 outline-2 outline-blue-200 rounded-md px-4 py-1" required>
+            <option value="null">Select</option>
+            <option value="hrd">HRD</option>
+            <option value="admin">Admin</option>
+            <option value="finance">Finance</option>
+          </select>
+        </div>
         <div class="flex items-center justify-between w-full">
           <button
             type="submit"
@@ -51,10 +61,12 @@
           </button>
         </div>
         <div class="my-4 text-center">
-          <a href="assets/pages/group_login.html" class="text-blue-500">Login as a group member?</a>
+          <a href="../../index.html" class="text-blue-500"
+            >Login as a single employee?</a
+          >
         </div>
       </form>
     </div>
-    <script src="assets/scripts/single_login.js"></script>
+    <script src="../scripts/group_login.js"></script>
   </body>
 </html>

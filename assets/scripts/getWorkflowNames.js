@@ -1,3 +1,4 @@
+// get the workflow name
 const url =
   "http://localhost/workflow_management_system_v1/wp-json/workflow-management/v1/workflow/get";
 const token = sessionStorage.getItem("token");
@@ -20,6 +21,7 @@ fetch(url, {
     }
   })
   .then((data) => {
+    console.log(data);
     const workflows = data;
     const dropdown_workflow_name = document.querySelector(".workflow_name");
     workflows.forEach((workflow) => {
