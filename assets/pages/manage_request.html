@@ -27,6 +27,7 @@
     <!-- dashboard script -->
     <!-- <script src="../scripts/dashboard.js" defer></script> -->
     <script src="../scripts/handle_request_person.js" defer></script>
+    <script src="../scripts/update_instance.js" defer></script>
     <title>Handle</title>
   </head>
   <body class="bg-gray-100" style="font-family: 'Ubuntu', sans-serif">
@@ -84,7 +85,7 @@
             </div>
             <div id="handle_request" style="display: none;">
               <p class="underline my-2 text-blue-500 text-lg">Handle the request</p>
-              <form action="your_script_or_url" id="handle_request_form">
+              <form id="handle_instance">
                 <label class="block font-bold" for="handle_option">Select the method</label>
                 <select class="border-2 border-blue-100 p-2" name="handle_request" id="handle_option">
                   <option value="pending">Pending</option>
@@ -95,6 +96,7 @@
                 </select>
                 <div class="my-4">
                   <button
+                    id="handle_request_btn"
                     type="submit"
                     class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                   >
@@ -103,7 +105,6 @@
                 </div>
               </form>
             </div>
-            
           </div>
         </div>
       </div>

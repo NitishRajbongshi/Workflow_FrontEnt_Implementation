@@ -241,6 +241,9 @@ function handle_request(request_id) {
   if(data_id == 0 || data_id == -1) {
   console.log("here");
     const handler_container = document.getElementById("handle_request");
+    const handle_request_btn = document.getElementById("handle_request_btn");
+    handle_request_btn.setAttribute("data-id", request_id);
+
     handler_container.style.display = "block";
     console.log(handler_container);
   }
