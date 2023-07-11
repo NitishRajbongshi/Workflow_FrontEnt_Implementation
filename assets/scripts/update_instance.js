@@ -7,6 +7,8 @@ function handleInstance(e) {
     const handle_request_btn = document.getElementById("handle_request_btn");
     const instance_id = handle_request_btn.getAttribute("data-id");
     console.log(instance_id);
+
+    
 }
 // Add event listener to the form submit event
 document
